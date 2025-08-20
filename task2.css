@@ -1,0 +1,207 @@
+:root {
+    --primary: #3b44a4;
+    --secondary: #34495e;
+    --accent: #5bbfc4;
+    --bg: #f7f9fa;
+    --white: #fff;
+    --shadow: 0 6px 24px rgba(44,62,80,0.08);
+  }
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: var(--bg);
+    color: var(--secondary);
+    min-height: 100vh;
+  }
+
+  /* Navbar */
+  nav {
+    background: var(--white);
+    box-shadow: var(--shadow);
+    padding: 18px 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  nav h1 {
+    font-size: 2rem;
+    color: var(--primary);
+    letter-spacing: 2px;
+    font-weight: 700;
+  }
+  .nav-btns {
+    display: flex;
+    gap: 18px;
+  }
+  .nav-btns button {
+    background: var(--primary);
+    color: var(--white);
+    border: none;
+    padding: 10px 22px;
+    border-radius: 25px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.2s;
+    box-shadow: 0 2px 8px rgba(44,62,80,0.07);
+  }
+  .nav-btns button:hover {
+    background: var(--accent);
+  }
+
+
+  /* Main Body Layout */
+  .main-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    padding: 40px 32px;
+    max-width: 1100px;
+    margin: auto;
+  }
+  .form-container, .todo-container {
+    background: var(--white);
+    padding: 32px;
+    border-radius: 18px;
+    box-shadow: var(--shadow);
+    transition: transform 0.2s;
+  }
+  .form-container:hover, .todo-container:hover {
+    transform: translateY(-4px) scale(1.02);
+  }
+  .form-container h2, .todo-container h2 {
+    margin-bottom: 18px;
+    color: var(--primary);
+    font-size: 1.3rem;
+    font-weight: 600;
+  }
+
+  input[type="text"], input[type="email"], input[type="tel"] {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0 18px 0;
+    border-radius: 8px;
+    border: 1.5px solid #e1e4ea;
+    font-size: 1rem;
+    background: #f7f9fa;
+    transition: border 0.2s;
+  }
+  input:focus {
+    border-color: var(--primary);
+    outline: none;
+  }
+  button[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    border-radius: 25px;
+    border: none;
+    background: var(--primary);
+    color: var(--white);
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background 0.2s;
+    margin-top: 8px;
+    box-shadow: 0 2px 8px rgba(44,62,80,0.07);
+  }
+  button[type="submit"]:hover {
+    background: var(--accent);
+  }
+
+  #taskInput {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1.5px solid #e1e4ea;
+    font-size: 1rem;
+    background: #f7f9fa;
+    margin-bottom: 12px;
+    transition: border 0.2s;
+  }
+  #taskInput:focus {
+    border-color: var(--primary);
+    outline: none;
+  }
+  .todo-container button {
+    width: 100%;
+    padding: 12px;
+    border-radius: 25px;
+    border: none;
+    background: var(--primary);
+    color: var(--white);
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background 0.2s;
+    margin-bottom: 12px;
+    box-shadow: 0 2px 8px rgba(44,62,80,0.07);
+  }
+  .todo-container button:hover {
+    background: var(--accent);
+  }
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+  li {
+    background: #f7f9fa;
+    margin-top: 10px;
+    padding: 12px 18px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.08rem;
+    box-shadow: 0 1px 4px rgba(44,62,80,0.05);
+    transition: background 0.2s;
+  }
+  li:hover {
+    background: #e1e4ea;
+  }
+  .remove {
+    background: transparent;
+    color: var(--accent);
+    border: none;
+    cursor: pointer;
+    padding: 0 8px;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    line-height: 1;
+    transition: color 0.2s;
+    margin-left: 12px;
+  }
+  .remove:hover {
+    color: #e74c3c;
+    background: #f7f9fa;
+  }
+
+  /* Responsive */
+  @media (max-width: 900px) {
+    .top-grid, .main-container {
+      grid-template-columns: 1fr;
+      gap: 24px;
+      padding: 32px 12px;
+    }
+    nav {
+      flex-direction: column;
+      gap: 12px;
+      padding: 18px 12px;
+    }
+  }
+  @media (max-width: 600px) {
+    .box, .form-container, .todo-container {
+      padding: 18px;
+      border-radius: 12px;
+    }
+    nav h1 {
+      font-size: 1.3rem;
+    }
+    .nav-btns button {
+      font-size: 0.95rem;
+      padding: 8px 14px;
+    }
+  }
